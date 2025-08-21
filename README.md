@@ -1,74 +1,91 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Santex Academy - FootballAPI
+# Football API ⚽️
 
-## Pasos para correr
+Proyecto fullstack para gestionar jugadores de fútbol (NestJS + Angular + MySQL).
 
-1. Instalar Docker Desktop: Si no lo tienen, es el primer paso.
-2. Clonar tu repositorio: 
-   
+---
+
+## 🚀 Pasos para correr con Docker
+
+1. **Instalar Docker Desktop:**  
+   Asegurate de tener Docker y Docker Compose instalados.
+
+2. **Clonar el repositorio:**
    ```bash
    git clone <URL_DE_TU_REPOSITORIO>
+   cd football-api
    ```
-3. Navegar a la carpeta del proyecto:
-    ```bash
-    cd football-api
-   ```
-4. Copiar las variable de entorno del archivo de ejemplo al de ambiente
-    ```bash
-    cp .env.sample .env
-   ```
-5. Levantar todo con: 
+
+3. **Configurar variables de entorno:**  
+   Copiá el archivo de ejemplo `.env.sample` a `.env`:
    ```bash
-    docker compose up
+   cp .env.sample .env
    ```
 
-## Alternativa
-Aca las instruciones para correr cada servicio por separado
+4. **Levantar los servicios con Docker Compose:**
+   ```bash
+   docker compose up -d
+   ```
 
-### Reiniciar los datos
+5. **Verificar que los contenedores estén corriendo:**
+   ```bash
+   docker ps
+   ```
 
-``` bash
-docker compose down -v # Esto detiene los contenedores y elimina los volúmenes (incluido db_data)
-docker compose up -d   # Esto vuelve a crear todo desde cero, ejecutando init.sql
+Esto levanta:
+- **MySQL** → `localhost:3306`  
+- **Backend (NestJS)** → `localhost:3000`  
+- **Frontend (Angular)** → `localhost:4200`  
+
+---
+
+## 🔄 Reiniciar los datos
+Si querés borrar la base de datos y recrearla desde cero:
+```bash
+docker compose down -v   # Elimina contenedores y volúmenes
+docker compose up -d     # Recrea todo, incluyendo la DB desde init.sql
 ```
 
-### Conectarse a MySQL desde el Terminal / Consola
+---
+
+## 🗄️ Conectarse a MySQL
+Podés conectarte manualmente al contenedor de la base de datos:
 
 ```bash
 mysql -h 127.0.0.1 -P 3306 --user=football_api --password=password football_db
 ```
 
-```bash
-mysql> SHOW TABLES;
+Comandos útiles:
+```sql
+SHOW TABLES;
+SELECT * FROM users;
+exit;
 ```
 
-```bash
-mysql> SELECT * FROM users;
+---
+
+## 📖 Documentación de la API
+Una vez corriendo el backend, accedé a Swagger en:  
+👉 [http://localhost:3000/api/docs](http://localhost:3000/api/docs)
+
+---
+
+## 📂 Estructura del proyecto
+```
+football-api/
+│── backend/        # NestJS API
+│── frontend/       # Angular App
+│── docker/         # Configuración inicial de DB
+│── docker-compose.yml
+│── README.md
 ```
 
-```bash
-mysql> exit;
-```
+---
 
-### Inicializar API
+## ⚠️ Errores conocidos
 
-```bash
-$ npm install
-```
+- **Paginación en el frontend:** al importar datos, la lista no siempre reinicia en la página 1.  
+- **Carga de imágenes de jugadores:** las URLs de imágenes se guardan en DB, pero no se renderizan correctamente en la vista del frontend.
 
-### Compilar y correr el BackEnd
+---
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-=======
-# football-api
->>>>>>> 30e04b6591973a525246af25a8d4ab04ad609311
+## 👨‍💻 Autor **Wenceslao Aguirre**

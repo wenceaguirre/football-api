@@ -19,6 +19,6 @@ export const routes: Routes = [
     ]
   },
 
-  // SIEMPRE última
+  
   { path: '**', loadComponent: () => import('./notfound/not-found').then(m => m.NotFound) },
 ];

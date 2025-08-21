@@ -69,7 +69,7 @@ Una vez corriendo el backend, accedé a Swagger en:
 
 ---
 
-## Para iniciar sesion
+## Para iniciar sesion podes crear una cuenta nueva o ingresar con este usuario:
 ```
 email: wence@XAcademy.dev
 contraseña: admin123

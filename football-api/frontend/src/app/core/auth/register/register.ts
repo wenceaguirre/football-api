@@ -85,14 +85,14 @@ export class Register {
       next: () => {
         this.success.set(true);
         this.loading.set(false);
-        // Si el backend devolvió token ya estás logueado; si no, igual redirigimos a login
+        
         setTimeout(() => {
-          this.router.navigateByUrl('/players'); // o '/login' si preferís
+          this.router.navigateByUrl('/login'); 
         }, 800);
       },
       error: (err) => {
         this.loading.set(false);
-        // mensajes comunes: 409 email duplicado, 400 validación
+        
         const status = err?.status;
         if (status === 409) this.error.set('Ese email ya está registrado.');
         else if (status === 400) this.error.set(err?.error?.message ?? 'Datos inválidos.');

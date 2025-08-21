@@ -69,14 +69,11 @@ Una vez corriendo el backend, accedé a Swagger en:
 
 ---
 
-## 📂 Estructura del proyecto
+## Para iniciar sesion
 ```
-football-api/
-│── backend/        # NestJS API
-│── frontend/       # Angular App
-│── docker/         # Configuración inicial de DB
-│── docker-compose.yml
-│── README.md
+email: wence@XAcademy.dev
+contraseña: admin123
+
 ```
 
 ---

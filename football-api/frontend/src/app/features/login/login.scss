@@ -1,0 +1,78 @@
+/* CTA debajo del formulario */
+.register-cta {
+  margin-top: 12px;
+  text-align: center;
+  color: #022702;          /* consistente con tus labels */
+  font-weight: 600;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Botones básicos (para <button> y <a>) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;   /* asegura que el <a> no tenga subrayado */
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* Botón principal existente (submit) */
+.btn-primary {
+  background: #1db954;
+  color: #fff;
+  border-color: #1db954;
+}
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Botón-enlace para "Crear cuenta" */
+.btn-outline {
+  background: transparent;
+  color: #1db954;
+  border-color: #1db954;
+}
+.btn-outline:hover {
+  background: #eaf8ef;   /* un verde muy suave */
+}
+
+/* (Tus estilos existentes) */
+.login-card {
+  max-width: 420px;
+  margin: 40px auto;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  color: #022702;
+  font-weight: 600;
+}
+
+input {
+  border: 1px solid #cde8cd;
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+input:focus {
+  outline: 2px solid #1db954;
+}
+
+.error {
+  color: #b00020;
+  margin-top: 12px;
+}

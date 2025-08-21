@@ -1,0 +1,130 @@
+:host {
+  --pg-bg:            #ffffff;
+  --pg-fg:            #1f2937;
+  --pg-muted:         #6b7280;
+  --pg-border:        #e5e7eb;
+  --pg-accent:        #2563eb;
+  --pg-accent-fg:     #ffffff;
+  --pg-hover:         #f3f4f6;
+  --pg-focus:         0 0 0 3px rgba(37, 99, 235, .35);
+  --pg-disabled:      #9ca3af;
+  --pg-btn-radius:    12px;
+  --pg-gap:           .5rem;
+  --pg-pad-y:         .5rem;
+  --pg-pad-x:         .75rem;
+  --pg-font:          14px;
+  --pg-shadow:        0 1px 2px rgba(0,0,0,.04);
+
+  display: block;
+}
+
+:host-context(.dark) {
+  --pg-bg:        #0b1020;
+  --pg-fg:        #f8fafc;
+  --pg-muted:     #94a3b8;
+  --pg-border:    #1e293b;
+  --pg-accent:    #60a5fa;
+  --pg-hover:     #0f172a;
+  --pg-focus:     0 0 0 3px rgba(96,165,250,.35);
+  --pg-disabled:  #475569;
+}
+
+.paginator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pg-gap);
+  background: var(--pg-bg);
+  color: var(--pg-fg);
+  border: 1px solid var(--pg-border);
+  border-radius: 16px;
+  box-shadow: var(--pg-shadow);
+  padding: .375rem .5rem;
+
+  &.compact {
+    --pg-gap: .25rem;
+    --pg-pad-y: .35rem;
+    --pg-pad-x: .6rem;
+    --pg-font: 13px;
+    border-radius: 12px;
+  }
+  &.cozy {
+    --pg-gap: .5rem;
+    --pg-pad-y: .55rem;
+    --pg-pad-x: .8rem;
+    --pg-font: 14px;
+  }
+
+  &.tonal .page-btn:not(.active):not(:disabled) {
+    background: color-mix(in srgb, var(--pg-hover) 60%, transparent);
+    border-color: color-mix(in srgb, var(--pg-border) 70%, transparent);
+  }
+  
+}
+
+.pages {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--pg-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0 .25rem;
+}
+
+.ellipsis {
+  color: var(--pg-muted);
+  user-select: none;
+}
+
+.page-btn {
+  appearance: none;
+  border: 1px solid var(--pg-border);
+  background: transparent;
+  color: var(--pg-fg);
+  font: 500 var(--pg-font)/1.1 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  padding: var(--pg-pad-y) var(--pg-pad-x);
+  border-radius: var(--pg-btn-radius);
+  cursor: pointer;
+  transition: transform .12s ease, background-color .15s ease, border-color .15s ease, color .15s ease, box-shadow .15s ease;
+
+  &:hover { background: var(--pg-hover); }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--pg-focus);
+    border-color: var(--pg-accent);
+  }
+
+  &.active,
+  &[aria-current="page"] {
+    background: var(--pg-accent);
+    color: var(--pg-accent-fg);
+    border-color: var(--pg-accent);
+  }
+
+  &.prev, &.next {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    .icon { font-weight: 700; font-size: 14px; }
+  }
+
+  &:disabled {
+    opacity: .55;
+    color: var(--pg-disabled);
+    border-color: var(--pg-border);
+    cursor: not-allowed;
+    background: transparent;
+  }
+
+  &:active:not(:disabled) { transform: translateY(1px); }
+}
+
+@media (max-width: 480px) {
+  .paginator { padding: .25rem .35rem; }
+  .page-btn { padding: .5rem .6rem; min-width: 40px; justify-content: center; }
+  .pages    { gap: .25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-btn { transition: none; }
+}

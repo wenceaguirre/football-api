@@ -1,0 +1,57 @@
+<section class="list-header">
+    <h2>Jugadores</h2>
+    <div class="actions">
+        <input placeholder="Buscar..." (input)="onSearch(($any($event.target)).value)">
+        <a routerLink="/players/new" class="btn btn-primary">Nuevo Jugador</a>
+        <label class="btn" [class.disabled]="loading()">
+            Importar CSV
+            <input type="file" accept=".csv,text/csv" (change)="onFileSelected($event)" hidden />
+        </label>
+        <button class="btn" (click)="exportPlayers()" [disabled]="loading()">Exportar CSV</button>
+    </div>
+</section>
+
+@switch (loading()) {
+    @case (true) { <app-loading-spinner/> }
+    @default {
+        @if (items().length === 0) {
+            <p>Sin resultados. </p>
+        } @else {
+            <div class="grid-cards">
+                @for (p of items(); track p.id) {
+                    <article class="card player-card">
+                        <img
+                            [src]="p.playerFaceUrl || defaultFace"
+                            alt="{{ p.longName }}"
+                            (error)="onImgError($event)"
+                            loading="lazy"
+                            decoding="async"
+                            referrerpolicy="no-referrer"
+                            crossorigin="anonymous"
+                        />
+                        <div class="info">
+                            <h3>{{p.longName}}</h3>
+                            <p class="meta">
+                                {{p.clubName}} · {{p.nationalityName}} · Pos: {{p.playerPositions}}
+                            </p>
+                            <div class="stats">
+                                @if (p.rating != null) {<span>RTG {{p.rating}}</span>}
+                                @if (p.speed != null) {<span>RTG {{p.speed}}</span>}
+                                @if (p.shooting != null) {<span>RTG {{p.shooting}}</span>}
+                                @if (p.passing != null) {<span>RTG {{p.passing}}</span>}
+                                @if (p.dribbling != null) {<span>RTG {{p.dribbling}}</span>}
+                            </div>
+                        </div>
+                        <footer class="card-actions">
+                            <a class="btn" [routerLink]="['/players', p.id]">Editar</a>
+                            <button class="btn" (click)="remove(p.id)">Borrar</button>
+                        </footer>
+                    </article>
+                }
+            </div>
+            <div class="paginator-wrapper">
+                <app-paginator [page]="page()" [limit]="limit()" [total]="total()" (pageChange)="onPageChange($event)"></app-paginator>
+            </div>
+        }
+    }
+}

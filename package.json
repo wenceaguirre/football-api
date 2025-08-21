@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@angular/common": "^20.1.6",
+    "@angular/router": "^20.1.6",
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/config": "^4.0.2",
+    "@nestjs/sequelize": "^11.0.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "dotenv": "^17.2.1"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^5.1.8"
+  }
+}

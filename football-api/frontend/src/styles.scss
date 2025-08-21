@@ -1,0 +1,39 @@
+/* Reset sutil */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: #052905;
+    color: #041d04;
+}
+
+
+.card {
+    background: #f7fff4;
+    border: 1px solid #e1f3e1;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+}
+
+
+.btn {
+    letter-spacing: .3px;
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #22d163, #12b654);
+    color: #062b06;
+}
+.paginator-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

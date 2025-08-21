@@ -1,0 +1,25 @@
+<section class="card login-card">
+  <h1>Ingresá</h1>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="grid">
+    <label>
+      Email
+      <input type="email" formControlName="email" placeholder="tu@email.com" />
+    </label>
+
+    <label>
+      Contraseña
+      <input type="password" formControlName="password" placeholder="••••••" />
+    </label>
+
+    <button class="btn btn-primary" [disabled]="loading()">Entrar</button>
+  </form>
+
+  @if (error()) { <p class="error">{{ error() }}</p> }
+
+  <p class="register-cta">
+    ¿No tenés cuenta?
+    <button type="button" class="btn btn-outline" (click)="goRegister()">
+      Crear cuenta
+    </button>
+  </p>
+</section>

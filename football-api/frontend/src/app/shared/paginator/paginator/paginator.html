@@ -1,0 +1,42 @@
+<nav
+  class="paginator"
+  [ngClass]="[appearance, tonal ? 'tonal' : '']"
+  aria-label="Paginación"
+>
+  <button
+    class="page-btn prev"
+    [disabled]="isFirst()"
+    aria-label="Anterior"
+    (click)="prev()"
+  >
+    <span class="icon">←</span>
+  </button>
+
+  <ul class="pages" role="list">
+    @for (item of visibleItems(); track item) {
+      <li>
+        @if (item !== '…') {
+          <button
+            class="page-btn"
+            [class.active]="item === pg()"
+            [attr.aria-current]="item === pg() ? 'page' : null"
+            (click)="goTo(item)"
+          >
+            {{ item }}
+          </button>
+        } @else {
+          <span class="ellipsis" aria-hidden="true">…</span>
+        }
+      </li>
+    }
+  </ul>
+
+  <button
+    class="page-btn next"
+    [disabled]="isLast()"
+    aria-label="Siguiente"
+    (click)="next()"
+  >
+    <span class="icon">→</span>
+  </button>
+</nav>

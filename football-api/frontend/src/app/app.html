@@ -1,0 +1,14 @@
+<header class="topbar">
+    <a a [routerLink]="auth.isLoggedIn() ? '/players' : '/login'" class="brand">
+        <span class="ball">⚽</span>
+    </a>
+    @if (auth.isLoggedIn()) {
+        <button type="button" class="btn btn-ghost" (click)="logout()">Salir</button>
+    }
+</header>
+
+<main class="container pitch-bg">
+    <router-outlet></router-outlet>
+</main>
+
+<footer class="footer">Hecho con Angular | {{title}}</footer>

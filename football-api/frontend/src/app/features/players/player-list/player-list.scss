@@ -1,0 +1,129 @@
+.list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.actions input {
+    padding: 10px 12px;
+    border-radius: 12px;
+    border: 1px solid #cde8cd;
+    width: 220px;
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.card {
+    background: #f7fff4;
+    border: 1px solid #e1f3e1;
+    border-radius: 16px;
+    padding: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+}
+
+.player-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    background: #e9ffe9;
+}
+
+.player-card .info {
+    padding: 8px 4px;
+}
+
+.meta {
+    color: #1c401c;
+    opacity: .8;
+    font-size: .9rem;
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.stats span {
+    background: #eaffea;
+    border: 1px solid #cfe9cf;
+    padding: 4px 8px;
+    border-radius: 999px;
+    font-size: .8rem;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.card .btn {
+    background: #0dd15e;
+    color: #063106;
+}
+
+.btn {
+    --bg: #fff;
+    --fg: #111827;
+    --bd: #e5e7eb;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .5rem .9rem;
+    border: 1px solid var(--bd);
+    border-radius: .6rem;
+    background: var(--bg);
+    color: var(--fg);
+    cursor: pointer;
+    transition: transform .08s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .08);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-primary {
+    --bg: #111827;
+    --fg: #fff;
+    --bd: #111827;
+}
+
+.btn-outline {
+    --bg: #fff;
+    --fg: #111827;
+    --bd: #11182733;
+}
+
+.btn-danger {
+    --bg: #dc2626;
+    --fg: #fff;
+    --bd: #b91c1c;
+}

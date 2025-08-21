@@ -1,0 +1,28 @@
+----------------------------------------
+Fecha de los cambios: 2025-08-11 01:14:34
+Archivos modificados:
+.DS_Store
+football-api/backend/package-lock.json
+football-api/backend/package.json
+football-api/backend/src/config/sequelize.config.ts
+football-api/backend/src/modules/players/dto/player.dto.ts
+football-api/backend/src/modules/players/entities/player.entity.ts
+football-api/backend/src/modules/players/interfaces/player-repository.interface.ts
+football-api/backend/src/modules/players/players.controller.ts
+football-api/backend/src/modules/players/players.service.ts
+football-api/backend/src/modules/players/repositories/memory/in-memory-player.repository.ts
+football-api/backend/src/modules/players/repositories/sequelize/player.model.ts
+football-api/backend/src/modules/players/repositories/sequelize/sequelize-player.repository.ts
+football-api/backend/src/modules/players/repositories/typeorm/typeorm-player.repository.ts
+football-api/frontend/src/app/services/player/player.ts
+.gitignore
+changes.log
+football-api/backend/src/modules/players/dto/createPlayer.dto.ts
+football-api/backend/src/modules/players/dto/playerQuery.dto.ts
+football-api/backend/src/modules/players/dto/updatePlayer.dto.ts
+log_changes.sh
+package-lock.json
+package.json
+Mensaje del commit: Cambios realizados en el backend
+----------------------------------------
+

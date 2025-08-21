@@ -1,0 +1,83 @@
+<section class="card">
+  <header class="header">
+    <h2>
+      @if (mode()==='create') { Nuevo jugador } @else { Editar jugador }
+    </h2>
+    <div class="header-actions">
+      <button class="btn" type="button" (click)="back()">Volver</button>
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid" form="playerForm">
+        @if (mode()==='create') { Crear } @else { Guardar }
+      </button>
+    </div>
+  </header>
+
+  <div class="form-grid">
+    <div class="preview">
+      <img
+        [src]="(form.value.playerFaceUrl || '').trim() || defaultFace"
+        alt="preview"
+        (error)="onImgError($event)"
+      />
+      <small>Vista previa</small>
+    </div>
+
+    <form id="playerForm" class="fields" [formGroup]="form" (ngSubmit)="submit()" autocomplete="off">
+      <div class="row">
+        <label>Nombre completo
+          <input formControlName="longName" placeholder="Kylian Mbappé" />
+        </label>
+        <label>Posiciones
+          <input formControlName="playerPositions" placeholder="FW" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Club
+          <input formControlName="clubName" placeholder="Paris Saint-Germain" />
+        </label>
+        <label>Nacionalidad
+          <input formControlName="nationalityName" placeholder="France" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>URL Foto
+          <input formControlName="playerFaceUrl" placeholder="https://.../face.png" />
+        </label>
+        <label>FIFA Version
+          <input formControlName="fifaVersion" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>FIFA Update
+          <input type="date" formControlName="fifaUpdate" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Rating
+          <input type="number" formControlName="rating" min="0" max="99" />
+        </label>
+        <label>Velocidad
+          <input type="number" formControlName="speed" min="0" max="99" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Tiro
+          <input type="number" formControlName="shooting" min="0" max="99" />
+        </label>
+        <label>Pase
+          <input type="number" formControlName="passing" min="0" max="99" />
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Regate
+          <input type="number" formControlName="dribbling" min="0" max="99" />
+        </label>
+      </div>
+    </form>
+  </div>
+</section>

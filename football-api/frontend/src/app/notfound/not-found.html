@@ -1,0 +1,25 @@
+<section class="nf-container" aria-labelledby="nf-title">
+  <div class="nf-card">
+    <div class="nf-code" aria-hidden="true">404</div>
+
+    <h1 id="nf-title" class="nf-title">Página no encontrada</h1>
+    <p class="nf-subtitle">
+      La ruta que visitaste no existe, fue movida o ya no está disponible.
+    </p>
+
+    <div class="nf-actions">
+      <button class="btn ghost" (click)="goBack()">← Volver</button>
+      <a class="btn primary" routerLink="/">Ir al inicio</a>
+    </div>
+
+    <div class="nf-illus" aria-hidden="true">
+      <!-- Ilustración SVG simple para darle vida -->
+      <svg viewBox="0 0 200 120" role="img" focusable="false">
+        <circle cx="60" cy="60" r="40" opacity="0.12" />
+        <rect x="100" y="30" width="70" height="12" rx="6" opacity="0.18" />
+        <rect x="100" y="50" width="50" height="12" rx="6" opacity="0.18" />
+        <rect x="100" y="70" width="60" height="12" rx="6" opacity="0.18" />
+      </svg>
+    </div>
+  </div>
+</section>

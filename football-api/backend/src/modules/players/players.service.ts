@@ -288,8 +288,8 @@ export class PlayersService {
             where: {
               longName: payload.longName!,
               fifaVersion: payload.fifaVersion!,
-            }, // ✅ non-null aquí
-            defaults: payload, // ✅ ahora coincide con InferCreationAttributes<PlayerModel>
+            },
+            defaults: payload,
             transaction: trx,
           });
           if (!created) {

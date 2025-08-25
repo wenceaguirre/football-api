@@ -11,7 +11,7 @@ Proyecto fullstack para gestionar jugadores de fútbol (NestJS + Angular + MySQL
 
 2. **Clonar el repositorio:**
    ```bash
-   git clone <URL_DE_TU_REPOSITORIO>
+   git clone <git@github.com:wenceaguirre/football-api.git>
    cd football-api
    ```
 
@@ -31,10 +31,7 @@ Proyecto fullstack para gestionar jugadores de fútbol (NestJS + Angular + MySQL
    docker ps
    ```
 
-Esto levanta:
-- **MySQL** → `localhost:3306`  
-- **Backend (NestJS)** → `localhost:3000`  
-- **Frontend (Angular)** → `localhost:4200`  
+Con esto, se levantara todo el proyecto 
 
 ---
 
@@ -51,7 +48,7 @@ docker compose up -d     # Recrea todo, incluyendo la DB desde init.sql
 Podés conectarte manualmente al contenedor de la base de datos:
 
 ```bash
-mysql -h 127.0.0.1 -P 3306 --user=football_api --password=password football_db
+mysql -h 127.0.0.1 -P 3306 --user=football_api --password=admin
 ```
 
 Comandos útiles:
